@@ -41,11 +41,11 @@ export const CalendarBody: React.FC<CalendarBodyProps> = ({
                                         setSelectedDate(day.date);
                                     }}
                                     className={`
-                            Calendar__day cursor-pointer rounded p-2 text-center transition-colors hover:bg-additional 
-                            ${isSelectedDay ? 'bg-additional7' : ''}
-                            ${isToday ? 'bg-red' : ''} 
-                            ${isAdditionalDay ? 'text-placeholder' : ''}
-                        `}
+                                        Calendar__day cursor-pointer rounded p-3 text-center text-lg transition-colors hover:bg-primary hover:text-title 
+                                        ${isSelectedDay ? 'bg-additional7' : ''}
+                                        ${isAdditionalDay ? 'text-text-alt' : ''}
+                                        ${isToday ? 'text-bg-primary bg-accent' : ''} 
+                                    `}
                                 >
                                     {day.dayNumber}
                                 </div>
@@ -74,7 +74,7 @@ export const CalendarBody: React.FC<CalendarBodyProps> = ({
                                 className={`
                         cursor-pointer rounded p-3 text-center transition-colors hover:bg-additional
                         ${isSelectedMonth ? 'bg-additional7' : ''}
-                        ${isCurrentMonth ? 'bg-red' : ''} 
+                        ${isCurrentMonth ? 'bg-accent' : ''} 
                     `}
                             >
                                 {monthName.monthShort}
@@ -85,7 +85,7 @@ export const CalendarBody: React.FC<CalendarBodyProps> = ({
             )}
             {state.mode === 'years' && (
                 <div className='grid grid-cols-3'>
-                    <div className='cursor-pointer rounded p-3 text-center text-placeholder transition-colors hover:bg-additional'>
+                    <div className='cursor-pointer rounded p-3 text-center text-text-alt transition-colors hover:bg-additional'>
                         {state.selectedYearInterval[0] - 1}
                     </div>
                     {state.selectedYearInterval.map((year) => {
@@ -103,14 +103,14 @@ export const CalendarBody: React.FC<CalendarBodyProps> = ({
                                 className={`
                         cursor-pointer rounded p-3 text-center transition-colors hover:bg-additional
                         ${isSelectedYear ? 'bg-additional7' : ''}
-                        ${isCurrentYear ? 'bg-red' : ''} 
+                        ${isCurrentYear ? 'bg-accent' : ''} 
                     `}
                             >
                                 {year}
                             </div>
                         );
                     })}
-                    <div className='cursor-pointer rounded p-3 text-center text-placeholder transition-colors hover:bg-additional'>
+                    <div className='cursor-pointer rounded p-3 text-center text-text-alt transition-colors hover:bg-additional'>
                         {state.selectedYearInterval.at(-1)! + 1}
                     </div>
                 </div>

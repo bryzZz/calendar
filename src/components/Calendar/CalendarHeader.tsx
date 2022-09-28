@@ -10,20 +10,32 @@ interface CalendarHeaderProps {
 
 export const CalendarHeader: React.FC<CalendarHeaderProps> = ({ state, functions }) => {
     return (
-        <div className='Calendar__header flex cursor-pointer select-none items-center justify-between rounded bg-bg-calendar-header'>
+        <div className='Calendar__header flex select-none items-center justify-between bg-primary p-1 text-title shadow-md'>
             <ArrowButton direction='left' onClick={() => functions.onClickArrow('left')} />
             {state.mode === 'days' && (
-                <div aria-hidden onClick={() => functions.setMode('months')}>
+                <div
+                    className='cursor-pointer'
+                    aria-hidden
+                    onClick={() => functions.setMode('months')}
+                >
                     {state.monthNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
                 </div>
             )}
             {state.mode === 'months' && (
-                <div aria-hidden onClick={() => functions.setMode('years')}>
+                <div
+                    className='cursor-pointer'
+                    aria-hidden
+                    onClick={() => functions.setMode('years')}
+                >
                     {state.selectedYear}
                 </div>
             )}
             {state.mode === 'years' && (
-                <div aria-hidden onClick={() => functions.setMode('days')}>
+                <div
+                    className='cursor-pointer'
+                    aria-hidden
+                    onClick={() => functions.setMode('days')}
+                >
                     {state.selectedYearInterval.at(0)} - {state.selectedYearInterval.at(-1)}
                 </div>
             )}

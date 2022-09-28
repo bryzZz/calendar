@@ -21,7 +21,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     const { state, functions } = useCalendar({ locale, selectedDate, firstWeekDay });
 
     return (
-        <div className='Calendar w-96 rounded bg-bg-calendar capitalize'>
+        <div className='Calendar mx-auto w-full max-w-lg rounded bg-title capitalize'>
             <CalendarHeader state={state} functions={functions} />
             <CalendarBody state={state} functions={functions} setSelectedDate={setSelectedDate} />
         </div>

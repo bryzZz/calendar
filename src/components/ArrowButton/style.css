@@ -1,0 +1,13 @@
+.ArrowButton svg {
+    color: #434141;
+    transition: 0.3s;
+    color: #797575;
+}
+
+.ArrowButton:hover svg {
+    color: #ebeded;
+}
+
+.ArrowButton svg path {
+    fill: currentColor;
+}

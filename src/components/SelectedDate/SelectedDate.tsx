@@ -7,7 +7,7 @@ interface SelectedDateProps {
 
 export const SelectedDate: React.FC<SelectedDateProps> = ({ date, locale = 'default' }) => {
     return (
-        <span className='mb-6 rounded-3xl bg-bg-calendar bg-placeholder p-8 pb-2 pt-2 text-xl text-bg-calendar'>
+        <span className='rounded-lg bg-primary p-8 pb-2 pt-2 text-xl text-title'>
             {new Intl.DateTimeFormat(locale, {
                 weekday: 'long',
                 year: 'numeric',

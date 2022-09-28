@@ -10,7 +10,7 @@ export const App: React.FC<AppProps> = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
     return (
-        <div className='App flex h-screen flex-col items-center bg-text pt-40'>
+        <div className='App flex h-screen flex-col items-center gap-4 bg-text pt-40'>
             <SelectedDate date={selectedDate} locale={locale} />
             <Calendar
                 selectedDate={selectedDate}
