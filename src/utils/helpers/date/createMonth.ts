@@ -8,15 +8,10 @@ export function createMonth(date: Date = new Date(), locale: string = 'default')
 
     const getDay = (dayNumber: number) => createDate(new Date(year, monthIndex, dayNumber), locale);
 
-    const createMonthDays = () => {
-        const days = [];
-
-        for (let i = 0; i <= getMonthNumberOfDays(monthIndex, year) - 1; i += 1) {
-            days[i] = getDay(i + 1);
-        }
-
-        return days;
-    };
+    const createMonthDays = () =>
+        Array(getMonthNumberOfDays(monthIndex, year) - 1)
+            .fill(0)
+            .map((_, i) => getDay(i + 1));
 
     return {
         getDay,
